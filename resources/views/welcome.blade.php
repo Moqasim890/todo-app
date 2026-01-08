@@ -6,69 +6,104 @@
     <title>{{ config('app.name', 'Todo App') }}</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="antialiased" style="background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%); min-height: 100vh;">
-    <div class="container mx-auto px-4 py-8 flex items-center justify-center min-h-screen">
-        <div class="grid lg:grid-cols-2 gap-8 w-full max-w-6xl">
-            <!-- Left Card - Features -->
-            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12" style="box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);">
-                <h1 class="text-4xl lg:text-5xl font-bold mb-4" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Todo App</h1>
-                <p class="text-gray-600 text-lg mb-10">Organize your tasks, boost your productivity, and achieve your goals efficiently.</p>
-                
-                <div class="grid grid-cols-2 gap-6">
-                    <div>
-                        <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);">
-                            <span class="text-2xl">✓</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900 mb-2 text-center">Easy to Use</h3>
-                        <p class="text-sm text-gray-600 text-center">Intuitive interface designed for everyone</p>
+<body class="antialiased" style="background: radial-gradient(circle at 30% 20%, #f0f9ff 0, #f8fbff 45%, #eef2ff 100%); min-height: 100vh;">
+    <div class="max-w-6xl mx-auto px-4 lg:px-8 py-12">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <!-- Left: Hero & features -->
+            <div class="space-y-8">
+                <p class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm shadow-indigo-100 text-sm font-semibold text-indigo-700">
+                    {{ config('app.name', 'Todo App') }} · Focus first
+                </p>
+
+                <div class="space-y-3">
+                    <h1 class="text-4xl lg:text-5xl font-black leading-tight text-slate-900">
+                        Minder ruis,
+                        <span class="inline-block bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">meer gedaan.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl">
+                        Plan taken, stel deadlines en switch tussen dag, week of maand. Alles blijft licht en overzichtelijk.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <p class="text-sm text-slate-500">Dag / week / maand</p>
+                        <p class="text-xl font-bold text-indigo-600">Agenda views</p>
                     </div>
-                    <div>
-                        <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);">
-                            <span class="text-2xl">📁</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900 mb-2 text-center">Organize</h3>
-                        <p class="text-sm text-gray-600 text-center">Categorize tasks for better management</p>
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <p class="text-sm text-slate-500">Categorie + status</p>
+                        <p class="text-xl font-bold text-indigo-600">Filters</p>
                     </div>
-                    <div>
-                        <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%); box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);">
-                            <span class="text-2xl">🔒</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900 mb-2 text-center">Secure</h3>
-                        <p class="text-sm text-gray-600 text-center">Your data is protected and private</p>
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <p class="text-sm text-slate-500">Eigen account</p>
+                        <p class="text-xl font-bold text-indigo-600">Veilig</p>
                     </div>
-                    <div>
-                        <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%); box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);">
-                            <span class="text-2xl">⚡</span>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-sm flex gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 text-white flex items-center justify-center">✓</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Snel starten</p>
+                            <p class="text-sm text-slate-600">Binnen 2 minuten je eerste lijst klaar.</p>
                         </div>
-                        <h3 class="font-bold text-gray-900 mb-2 text-center">Fast</h3>
-                        <p class="text-sm text-gray-600 text-center">Lightning-quick performance</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-sm flex gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 text-white flex items-center justify-center">📁</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Slim ordenen</p>
+                            <p class="text-sm text-slate-600">Categorieën, status en duidelijke labels.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-sm flex gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center">🔒</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Alleen jij</p>
+                            <p class="text-sm text-slate-600">Data afgeschermd per gebruiker.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-100 shadow-sm flex gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white flex items-center justify-center">⚡</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Licht & vlot</p>
+                            <p class="text-sm text-slate-600">Direct inzicht zonder trage schermen.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Card - Auth -->
-            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 flex flex-col justify-center" style="box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);">
+            <!-- Right: Auth card -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 lg:p-10 space-y-6">
                 @auth
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Welcome back! 👋</h2>
-                    <p class="text-gray-600 mb-8">Ready to get productive? Let's dive in.</p>
-                    <a href="{{ route('dashboard') }}" class="w-full text-white rounded-lg px-6 py-4 font-semibold transition transform hover:-translate-y-1 text-center shadow-lg" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
-                        Go to Dashboard →
+                    <div class="space-y-2">
+                        <p class="text-sm font-semibold text-indigo-600">Welkom terug</p>
+                        <h2 class="text-3xl font-bold text-slate-900">Ga verder met je taken</h2>
+                        <p class="text-slate-600">Dashboard open, filters en agenda staan klaar.</p>
+                    </div>
+                    <a href="{{ route('dashboard') }}" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded-xl px-6 py-3.5 font-semibold hover:from-indigo-600 hover:to-cyan-600 transition shadow-lg">
+                        <span>Ga naar dashboard</span>
+                        <span>→</span>
                     </a>
                 @else
-                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Get Started</h2>
-                    <p class="text-gray-600 mb-8">Join thousands of users managing their tasks efficiently</p>
-                    
-                    <div class="space-y-4 mb-8">
-                        <a href="{{ route('register') }}" class="w-full text-white rounded-lg px-6 py-4 font-bold transition transform hover:-translate-y-1 block text-center shadow-lg" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
-                            Create Account
+                    <div class="space-y-2">
+                        <p class="text-sm font-semibold text-indigo-600">Gratis beginnen</p>
+                        <h2 class="text-3xl font-bold text-slate-900">Bouw je flow op</h2>
+                        <p class="text-slate-600">Maak een account of log in en start meteen.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <a href="{{ route('register') }}" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded-xl px-6 py-3.5 font-semibold hover:from-indigo-600 hover:to-cyan-600 transition shadow-lg">
+                            <span>Account aanmaken</span>
+                            <span>🚀</span>
                         </a>
-                        <a href="{{ route('login') }}" class="w-full rounded-lg px-6 py-4 font-bold transition block text-center" style="background: #e0f2fe; color: #0e7490; border: 2px solid #06b6d4;">
-                            Sign In
+                        <a href="{{ route('login') }}" class="w-full inline-flex items-center justify-center gap-2 border-2 border-slate-200 text-slate-800 rounded-xl px-6 py-3.5 font-semibold hover:border-indigo-300 hover:text-indigo-800 transition bg-white">
+                            <span>Inloggen</span>
+                            <span>→</span>
                         </a>
                     </div>
 
-                    <p class="text-sm text-gray-500 text-center">
-                        No credit card required • Free to start • Cancel anytime
+                    <p class="text-sm text-slate-500 text-center">
+                        Geen creditcard nodig · Gratis starten · Altijd opzegbaar
                     </p>
                 @endauth
             </div>
